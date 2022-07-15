@@ -29,10 +29,8 @@ apply plugin: 'com.google.firebase.crashlytics'
 //#endif
 
 android {
-    namespace 'me.zhanghai.android.files'
     compileSdkVersion 32
-    ndkVersion '24.0.8215888'
-    buildToolsVersion '32.0.0'
+    ndkVersion '22.1.7171670'
     defaultConfig {
         applicationId 'me.zhanghai.android.files'
         minSdkVersion 21
@@ -70,11 +68,9 @@ android {
         }
     }
     packagingOptions {
-        resources {
-            excludes += ['META-INF/DEPENDENCIES']
-        }
+        excludes += ['META-INF/DEPENDENCIES']
     }
-    lint {
+    lintOptions {
         // For "Invalid package reference in library; not included in Android: javax.security.sasl.
         // Referenced from org.apache.mina.proxy.ProxyAuthException."
         warning 'InvalidPackage', 'MissingTranslation'
